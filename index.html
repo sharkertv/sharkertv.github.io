@@ -37,7 +37,7 @@ outline: none;
 <body>
 
 <img width="40%" src="logo.png" alt="SharkerTV"><span><b style="font-family: Constantia">Online Cable (Kinda). To start/stop watching, click ↓</b></span>
-<center><video oncontextmenu="return false;" id="episodeVideo" width="70%" controls autoplay loop onended="run()">
+<center><video oncontextmenu="return false;" id="episodeVideo" width="70%" controls autoplay muted loop onended="run()">
     <source src="countdown1.mp4" type='video/mp4'/>
 </video></center>
 <script>
@@ -54,6 +54,7 @@ function run(){
         if (video_count == 4) video_count = 1;
         var nextVideo = "ssep01.mp4";
         videoPlayer.src = nextVideo;
+        videoPlayer.muted = !videoPlayer.muted;
         videoPlayer.play();
    };
 
